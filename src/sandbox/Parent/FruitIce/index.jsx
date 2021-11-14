@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-function FruitIce() {
-  const [temperature, setTemperature] = useState(0);
+function FruitIce(props) {
   const [type, setType] = useState("Fruit multi Ice");
+  const {temperature, setTemperature} = props;
   return (
     <div>
       <p>FruitIce component</p>
