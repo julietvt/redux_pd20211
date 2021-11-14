@@ -1,18 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteUser} from "../../actions";
+import { deleteUser, updateUser} from "../../actions";
 
-const UserList = () => {
+const UserList = (props) => {
     
-    const {users, deleteUserAction} = props;
+    const {users, deleteUserAction, updateUserAction} = props;
     
-    const mapUser = ({id, nameUser, emailUser}, index) => {
+    const mapUser = ({id, nameUser, emailUser, isAuth}, index) => {
         const del = () => {
             deleteUserAction(id);
         }
+        const updateAuth = () => {
+            updateUserAction({id: id, isAuth: !isAuth});
+        }
         return(
             <li key={id}>
-                ID {id} . name: {nameUser} email: {emailUser}
+                ID {id} . name: {nameUser} email: {emailUser} isAuth: {isAuth}
+                <input type="checkbox" checked={isAuth} onChange={updateAuth} />
                 <button onClick={del}>Delete user</button>
             </li>
         );
@@ -26,7 +30,10 @@ const mapDispatchToProps = (dispatch) => {
     return{
         deleteUserAction: id => {
             dispatch(deleteUser(id));
-        }
+        },
+        updateUserAction: newData => {
+            dispatch(updateUser(newData));
+        },
     }
 };
 

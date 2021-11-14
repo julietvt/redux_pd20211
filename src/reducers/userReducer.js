@@ -6,11 +6,13 @@ const initialState = {
       id: Date.now(),
       nameUser: 'John',
       emailUser: 'john@test.cpm',
+      isAuth: false,
     },
     {
       id: Date.now(),
       nameUser: 'Tom',
       emailUser: 'tom@test.cpm',
+      isAuth: false,
     },
   ],
 };
@@ -23,9 +25,10 @@ const userReducer = (state = initialState, action) => {
       const newUser = {
         ...userData,
         id: Date.now(),
+        isAuth: false,
       };
       const newUsers = [...users, newUser];
-      return newUsers;
+      return { users: newUsers };
     }
     case ACTION_TYPES.DELETE_USER: {
       const { users } = state;

@@ -14,6 +14,7 @@ const UserForm = (props) => {
         formikBag.resetForm();
     };
     return(
+        // поле Field isAuth не обязательное так как изначально находится в false  <Field name="isAuth" />
         <Formik initialValues={initialUserValues} onSubmit={submitHandler}>
             {formikProps => {
                 return(
