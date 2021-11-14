@@ -3,7 +3,8 @@ import {Formik, Form, Field} from 'formik';
 import { connect } from 'react-redux';
 import { createUser } from '../../actions';
 
-const UserForm = () => {
+const UserForm = (props) => {
+    const {createUserAction} = props;
     const initialUserValues = {
         nameUser: '',
         emailUser: '',
@@ -15,12 +16,14 @@ const UserForm = () => {
     return(
         <Formik initialValues={initialUserValues} onSubmit={submitHandler}>
             {formikProps => {
+                return(
                 <Form>
-                    <Field name="name" />
+                    <Field name="nameUser" />
                     <Field name="emailUser" />
                     <button type='submit'>Add user</button>
                 </Form>
-            }}
+                );
+        }}
         </Formik> 
     );
 }

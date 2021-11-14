@@ -5,12 +5,12 @@ const initialState = {
     {
       id: Date.now(),
       nameUser: 'John',
-      email: 'john@test.cpm',
+      emailUser: 'john@test.cpm',
     },
     {
       id: Date.now(),
       nameUser: 'Tom',
-      email: 'tom@test.cpm',
+      emailUser: 'tom@test.cpm',
     },
   ],
 };
@@ -54,3 +54,5 @@ const userReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default userReducer;
