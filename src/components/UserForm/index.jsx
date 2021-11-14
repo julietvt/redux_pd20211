@@ -24,6 +24,7 @@ const UserForm = () => {
         </Formik> 
     );
 }
+const mapStateToProps = state => state.userReducerStates;
 
  const mapDispatchToProps = dispatch => {
      return{
