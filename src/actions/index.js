@@ -13,10 +13,10 @@ export const setStep = (newStep) => ({
 
 //user
 
-export const createUser = (userData) => {
+export const createUser = (data) => {
   return {
     type: ACTION_TYPES.CREATE_USER,
-    userData: userData,
+    data: data,
   };
 };
 
@@ -27,9 +27,9 @@ export const deleteUser = (id) => {
   };
 };
 
-export const updateUser = (newData) => {
+export const updateUser = (data) => {
   return {
     type: ACTION_TYPES.UPDATE_USER,
-    newData: newData,
+    data: data,
   };
 };

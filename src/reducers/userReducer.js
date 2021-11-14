@@ -21,9 +21,9 @@ const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.CREATE_USER: {
       const { users } = state;
-      const { userData } = action;
+      const { data } = action;
       const newUser = {
-        ...userData,
+        ...data,
         id: Date.now(),
         isAuth: false,
       };
@@ -47,10 +47,10 @@ const userReducer = (state = initialState, action) => {
     }
     case ACTION_TYPES.UPDATE_USER: {
       const { users } = state;
-      const { newData } = action;
+      const { data } = action;
       const newUsers = [...users];
-      const findUserIndex = newUsers.findIndex((u) => newData.id === u.id);
-      newUsers[findUserIndex] = { ...newUsers[findUserIndex], ...newData };
+      const index = newUsers.findIndex((u) => data.id === u.id);
+      newUsers[index] = { ...newUsers[index], ...data };
       return { users: newUsers };
     }
     default:
