@@ -3,9 +3,10 @@ import {Formik, Form, Field} from 'formik';
 import { connect } from 'react-redux';
 //import { createUser } from '../../actions';
 //import UserSagaList from '../UserSagaList';
+import * as actions from '../../actions';
 
 const UserSagaForm = (props) => {
-    //const {createUserAction} = props;
+    const {} = props;
 
     const initialUserValues = {
         nameUser: '',

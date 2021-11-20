@@ -1,44 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteUser, updateUser} from "../../actions";
+import * as actionsCreator from '../../actions';
 
 const UserSagaList = (props) => {
     
-    //const {users, deleteUserAction, updateUserAction} = props;
+    const {users, isFetching, error, getUsers} = props;
     
-    const mapUser = ({id, nameUser, emailUser, isAuth}, index) => {
-        const del = () => {
-            deleteUserAction(id);
-        }
-        const updateAuth = () => {
-            updateUserAction({id: id, isAuth: !isAuth});
-        }
+    const mapUser = ({id, nameUser, emailUser, isAuth}) => {
+        const chooseAuth = () => {
+           
         return(
             <li key={id}>
                 ID {id} . name: {nameUser} email: {emailUser} isAuth: {isAuth}
-                <input type="checkbox" checked={isAuth} onChange={updateAuth} />
-                <button onClick={del}>Delete user</button>
             </li>
         );
     };
     return <ul>{users.map(mapUser)}</ul>;
+    }
 }
 
-export default UserSagaList;
+const mapStateToProps = (state) => state.userSaga;
 
-/*
-const mapStateToProps = (state) => state.userReducerStates;
+const mapDispatchToProps = (dispatch) => ({
+    getUsers: () => dispatch(actionsCreator.getUserAction()),
+});
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        deleteUserAction: id => {
-            dispatch(deleteUser(id));
-        },
-        updateUserAction: newData => {
-            dispatch(updateUser(newData));
-        },
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserList);
-*/
+export default connect(mapStateToProps, mapDispatchToProps)(UserSagaList);
