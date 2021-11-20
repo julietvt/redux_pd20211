@@ -33,3 +33,18 @@ export const updateUser = (data) => {
     data: data,
   };
 };
+
+//auth
+
+export const authLogin = (data) => {
+  return {
+    type: ACTION_TYPES.AUTH_LOGIN,
+    data: data,
+  };
+};
+
+export const authClear = () => {
+  return {
+    type: ACTION_TYPES.AUTH_CLEAR,
+  };
+};
