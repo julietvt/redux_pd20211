@@ -1,8 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from './components/Counter';
-import React, { Component } from 'react';
-import UserPage from './pages/UserPage';
+import React from 'react';
 import UserSagaPage from './pages/UserSagaPage';
 
 function App() {

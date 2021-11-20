@@ -8,23 +8,22 @@ const initialState = {
 
 const userSagaReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION_TYPES.USER_SAGA_REQUEST: {
+    case ACTION_TYPES.GET_USER_REQUEST: {
       return {
         ...state,
         isFetching: true,
         error: null,
       };
     }
-    case ACTION_TYPES.USER_SAGA_SUCCESS: {
+    case ACTION_TYPES.GET_USER_SUCCESS: {
       const { users } = action;
       return {
         ...state,
         isFetching: false,
-        error: null,
         users: users,
       };
     }
-    case ACTION_TYPES.USER_SAGA_ERROR: {
+    case ACTION_TYPES.GET_USER_ERROR: {
       const { error } = action;
       return {
         ...state,

@@ -62,10 +62,11 @@ export const getUserError = (error) => ({
 
 export const getUserSuccess = (users) => ({
   type: ACTION_TYPES.GET_USER_SUCCESS,
+  users: users,
 });
 
 export const getUserAction = () => ({
-  type: ACTION_TYPES.GET_USER_LOGIN,
+  type: ACTION_TYPES.GET_USER_ACTION,
 });
 
 // user saga: create
@@ -79,12 +80,12 @@ export const createUserError = (error) => ({
   error: error,
 });
 
-export const createUserSuccess = (user) => ({
+export const createUserSuccess = (users) => ({
   type: ACTION_TYPES.CREATE_USER_SUCCESS,
-  user: user,
+  users: users,
 });
 
-export const createUserAction = (user) => ({
+export const createUserAction = (users) => ({
   type: ACTION_TYPES.CREATE_USER_ACTION,
-  user: user,
+  users: users,
 });

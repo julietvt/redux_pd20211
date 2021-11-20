@@ -8,6 +8,6 @@ const rootReducer = combineReducers({
   counter: counterReducer,
   userReducerStates: userReducer,
   auth: authReducer,
-  userSaga: userSagaReducer,
+  user: userSagaReducer,
 });
 export default rootReducer;

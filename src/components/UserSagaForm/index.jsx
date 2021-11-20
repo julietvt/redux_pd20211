@@ -1,8 +1,7 @@
 import React from 'react';
 import {Formik, Form, Field} from 'formik';
 import { connect } from 'react-redux';
-//import { createUser } from '../../actions';
-//import UserSagaList from '../UserSagaList';
+import { createUser } from '../../actions';
 import * as actions from '../../actions';
 
 const UserSagaForm = (props) => {
@@ -15,7 +14,7 @@ const UserSagaForm = (props) => {
     };
 
     const submitHandler = (values, formikBag) => {
-        //createUserAction(values);
+        createUserAction(values);
         formikBag.resetForm();
     };
 
@@ -36,7 +35,7 @@ const UserSagaForm = (props) => {
 
 export default UserSagaForm;
 
-/*
+
 const mapStateToProps = state => state.userReducerStates;
 
  const mapDispatchToProps = dispatch => {
@@ -47,5 +46,4 @@ const mapStateToProps = state => state.userReducerStates;
      };
  };
  
-export default connect(mapStateToProps, mapDispatchToProps) (UserForm);
-*/
+export default connect(mapStateToProps, mapDispatchToProps) (UserSagaForm);
