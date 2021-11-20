@@ -5,7 +5,6 @@ import UserSagaList from '../../components/UserSagaList';
 function UserSagaPage () {
     return (
         <>
-        <UserSagaForm />
         <UserSagaList />
         </>
     );

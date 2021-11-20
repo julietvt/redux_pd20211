@@ -1,4 +1,4 @@
 export const getUsers = () => {
-  // загрузка пользователей с базы
-  console.log('Users were loaded');
+  const str = 'hello';
+  return str;
 };

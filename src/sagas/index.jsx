@@ -1,10 +1,10 @@
 import { takeLatest } from "@redux-saga/core/effects";
 import ACTION_TYPES from "../actions/actionsType";
-import {getUserSaga, createUserSaga} from './userSaga';
+import {getUserSaga} from './getUserSaga';
 
 function * rootSaga(){
-    yield takeLatest(ACTION_TYPES.USER_SAGA_LOGIN, getUserSaga);  
-    yield takeLatest(ACTION_TYPES.CREATE_USER_ACTION, createUserSaga);
+    yield takeLatest(ACTION_TYPES.GET_USER_LOGIN, getUserSaga);  
+    //yield takeLatest(ACTION_TYPES.CREATE_USER_ACTION, createUserSaga);
 
 }
 export default rootSaga;
