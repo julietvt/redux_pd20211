@@ -48,3 +48,43 @@ export const authClear = () => {
     type: ACTION_TYPES.AUTH_CLEAR,
   };
 };
+
+// user saga : get
+
+export const getUserRequest = () => ({
+  type: ACTION_TYPES.GET_USER_REQUEST,
+});
+
+export const getUserError = (error) => ({
+  type: ACTION_TYPES.GET_USER_ERROR,
+  error: error,
+});
+
+export const getUserSuccess = (users) => ({
+  type: ACTION_TYPES.GET_USER_SUCCESS,
+});
+
+export const getUserAction = () => ({
+  type: ACTION_TYPES.GET_USER_LOGIN,
+});
+
+// user saga: create
+
+export const createUserRequest = () => ({
+  type: ACTION_TYPES.CREATE_USER_REQUEST,
+});
+
+export const createUserError = (error) => ({
+  type: ACTION_TYPES.CREATE_USER_ERROR,
+  error: error,
+});
+
+export const createUserSuccess = (user) => ({
+  type: ACTION_TYPES.CREATE_USER_SUCCESS,
+  user: user,
+});
+
+export const createUserAction = (user) => ({
+  type: ACTION_TYPES.CREATE_USER_ACTION,
+  user: user,
+});
